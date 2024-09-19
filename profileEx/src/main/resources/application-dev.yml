@@ -1,0 +1,4 @@
+message: development
+spring:
+  application:
+    name: profileEx
