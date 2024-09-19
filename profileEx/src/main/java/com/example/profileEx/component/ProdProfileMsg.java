@@ -3,26 +3,26 @@ package com.example.profileEx.component;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 import jakarta.annotation.PostConstruct;
 
 @Component
-@PropertySource("application-qa.yml")
-@PropertySource("application-dev.yml")// will not cause bean creation exception even QA spec key is not set to active
-public class ProfileEx {
+@Profile("prod")
+public class ProdProfileMsg {
 
 	
 	@Value("${message}")
 	String message;
 
-	@Value("${qamsg}")
-	String qaMsg;
+	@Value("${prodmsg}")
+	String prodMsg;
 	
 	@PostConstruct
 	public void display() {
 		System.out.println("Profile is set to : "+message);
-		System.out.println("Profile is set to : "+qaMsg);
+		System.out.println("Profile is set to : "+prodMsg);
 	}
 }

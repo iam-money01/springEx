@@ -1,0 +1,5 @@
+message: QA
+qamsg: this is unique message from QA server
+spring:
+  application:
+    name: profileEx
