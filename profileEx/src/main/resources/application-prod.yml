@@ -1,0 +1,5 @@
+message: production
+prodmsg: this is unique message from prod server
+spring:
+  application:
+    name: profileEx

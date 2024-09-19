@@ -1,0 +1,6 @@
+message: default
+spring:
+  application:
+    name: profileEx
+  profiles:
+    active: prod,dev
