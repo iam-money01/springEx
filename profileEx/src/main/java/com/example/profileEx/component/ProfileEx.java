@@ -3,11 +3,13 @@ package com.example.profileEx.component;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 import jakarta.annotation.PostConstruct;
 
 @Component
+@PropertySource("application-prod.yml")// will not cause bean creation exception even prod spec key is not set to active
 public class ProfileEx {
 
 	
