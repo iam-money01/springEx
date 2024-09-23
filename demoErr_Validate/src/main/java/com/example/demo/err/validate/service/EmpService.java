@@ -20,7 +20,7 @@ public class EmpService {
 		return empRepo.save(emp);
 	}
 	
-	public List<Emp> findALL(int id) {
+	public List<Emp> getAllEmployees() {
 		return empRepo.findAll();
 	}
 	
