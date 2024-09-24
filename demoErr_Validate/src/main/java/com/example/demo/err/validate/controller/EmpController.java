@@ -1,11 +1,9 @@
 package com.example.demo.err.validate.controller;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,15 +30,17 @@ public class EmpController {
 		return new ResponseEntity<Emp>(empService.saveEmp(empReq),HttpStatus.CREATED);
 	}
 	
+	@GetMapping("/getEmp/{id}")
+	private ResponseEntity<Emp> getEmp(@PathVariable int id) {
+		return ResponseEntity.ok(empService.getEmp(id));
+	}
+	
 	@GetMapping("/getEmployees")
 	private ResponseEntity<List <Emp>>findALL() {
 		return ResponseEntity.ok(empService.getAllEmployees());
 	}
 	
-	@GetMapping("/getEmployee")
-	private ResponseEntity<Emp> getEmp(@PathVariable int id) {
-		return ResponseEntity.ok(empService.getEmp(id));
-	}
+	
 		
 }
 
